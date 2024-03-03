@@ -45,12 +45,18 @@ window.addEventListener('load', () => {
 function agregarProducto() {
     const nombreProducto = document.getElementById("producto").value.trim();
     const precioProducto = parseFloat(document.getElementById("precio").value.trim());
-    let cantidadProducto = 1; //  cantidad por defecto = 1
+    let cantidadProducto = 1; // cantidad por defecto = 1
 
     // obtener la cantidad ingresada 
     const cantidadIngresada = document.getElementById("cantidad").value.trim();
     if (cantidadIngresada !== "") {
         cantidadProducto = parseInt(cantidadIngresada);
+    }
+
+    // Verificar que la cantidad no sea negativa
+    if (cantidadProducto < 0) {
+        mostrarMensaje("La cantidad de productos no puede ser negativa.", "error");
+        return;
     }
 
     // Verificar que el nombre del producto no esté vacío
@@ -80,7 +86,7 @@ function agregarProducto() {
         actualizarLista();
         guardarListaEnLocalStorage();
 
-        // Mostrar notificación de exito
+        // Mostrar notificación de éxito
         mostrarMensaje("Producto agregado correctamente", "exito");
     }
 }
@@ -151,7 +157,7 @@ function actualizarLista(productos = listaCompras, contenedorId = "lista-compras
                 <button class="interno editar-btn" onclick="editarProducto(${producto.id})">Editar</button>
             </div>
         `;
-        totalPrecio += producto.precio;
+        totalPrecio += producto.precio * producto.cantidad;
     });
 
     document.getElementById(contenedorId).innerHTML = listaHTML;
