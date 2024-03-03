@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lista de compras</title>
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.min.css">
+    <link rel="stylesheet" href="css/estilo.css">
+</head>
+
+<body>
+    <header>
+        <h1>Lista de compras</h1>
+    </header>
+    <main>
+        <input type="text" id="producto" placeholder="Nombre del producto">
+        <input type="number" id="precio" placeholder="Precio del producto">
+        <input type="number" id="cantidad" placeholder="Cantidad" value="1"> <!-- Campo de entrada para la cantidad -->
+        <button id="agregar">Agregar</button>
+        <select id="ordenar">
+            <option value="precio-menor">Precio de menor a mayor</option>
+            <option value="precio-mayor">Precio de mayor a menor</option>
+        </select>
+        <div id="lista-compras" class="lista"></div>
+        <div id="total"></div>
+        <div>
+            <input type="text" id="buscar" placeholder="Buscar producto">
+            <button id="buscar-btn">Buscar</button>
+        </div>
+        <div id="resultados-busqueda" class="lista"></div>
+    </main>
+    <script src="js/main.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.all.min.js"></script>
+</body>
+
+</html>

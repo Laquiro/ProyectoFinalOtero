@@ -1,0 +1,20 @@
+[
+    {
+      "id": 1,
+      "nombre": "Leche",
+      "precio": 999,
+      "cantidad":1
+    },
+    {
+      "id": 2,
+      "nombre": "Pan",
+      "precio": 1800,
+      "cantidad":1
+    },
+    {
+      "id": 3,
+      "nombre": "Huevos",
+      "precio": 2490,   
+      "cantidad":1
+    }
+  ]
